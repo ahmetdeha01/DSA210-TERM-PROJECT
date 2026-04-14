@@ -1,6 +1,5 @@
-# DSA210 Project - 3D Printing Parameter Analysis
 
-# DSA 210: Introduction to Data Science - Term Project
+# DSA 210: Introduction to Data Science - Term Project: 3D Printing Parameter Analysis
 
 **Term:** 2025-2026 Spring  
 **Student:** Ahmet Deha Yıldırım
