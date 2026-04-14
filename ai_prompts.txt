@@ -1,0 +1,14 @@
+AI tools were used during the preparation of this project.
+
+Main uses:
+- organizing the GitHub repository structure
+- drafting and revising the README.md content
+- generating and refining initial Python code for data cleaning, EDA, and hypothesis testing
+- helping with documentation and milestone planning
+
+Example prompts used:
+- "create a repository structure for my DSA210 project."
+- "Generate/revise my Python code for data cleaning, EDA, and hypothesis testing for this dataset."
+- "Explain how to organize raw and processed data for GitHub submission."
+
+All generated outputs were reviewed, edited, and applied by me.
