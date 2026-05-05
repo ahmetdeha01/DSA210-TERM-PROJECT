@@ -5,3 +5,4 @@
 +scipy
 +jupyter
 +scikit-learn
++xgboost
