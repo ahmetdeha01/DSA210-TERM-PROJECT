@@ -10,5 +10,9 @@ Example prompts used:
 - "create a repository structure for my DSA210 project."
 - "Generate/revise my Python code for data cleaning, EDA, and hypothesis testing for this dataset."
 - "Explain how to organize raw and processed data for GitHub submission."
+- "What ML methods should I apply to predict roughness, tensile strength and elongation?"
+- "Generate feature engineering and Gaussian noise augmentation code for my 3D printing dataset."
+- "Write ML analysis code using Linear Regression, Random Forest, XGBoost and SVR for my dataset."
+- "Help me formulate and test hypotheses based on my data."
 
 All generated outputs were reviewed, edited, and applied by me.
