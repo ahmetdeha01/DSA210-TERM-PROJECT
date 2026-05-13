@@ -65,12 +65,25 @@ Since the original dataset contains only 50 samples, two enrichment steps were a
 
 ## Machine Learning Results
 
-Four regression models were trained and evaluated for each output variable using 80/20 train-test split and 5-fold cross-validation.
+Four regression models were trained and evaluated for each output variable using GridSearchCV (5-fold cross-validation) with 60/20/20 train/validation/test split.
 
-| Target | Best Model | R² |
-|--------|-----------|-----|
-| roughness | XGBoost | 0.992 |
-| tensile_strength | XGBoost | 0.975 |
-| elongation | SVR | 0.987 |
+| Target | Best Model | Test R² |
+|--------|-----------|---------|
+| roughness | SVR | 0.993 |
+| tensile_strength | SVR | 0.999 |
+| elongation | SVR | 0.997 |
 
 **Models compared:** Linear Regression, Random Forest, XGBoost, SVR
+
+---
+
+## Model Performance Interpretation
+
+### Roughness
+Linear Regression achieved a test R² of 0.879, indicating a strong but imperfect linear relationship. Random Forest (R²=0.977) and XGBoost (R²=0.990) performed significantly better, capturing non-linear interactions between layer_height and print_speed. SVR with RBF kernel and C=100 achieved the best result (R²=0.993), suggesting the relationship between printing parameters and surface roughness is complex and non-linear. Feature importance analysis confirms that layer_height is the dominant predictor (importance=0.52), consistent with H1.
+
+### Tensile Strength
+Linear Regression performed poorly (R²=0.683), indicating that tensile strength cannot be predicted well by a simple linear model. This is likely due to the interaction effects between wall_thickness, infill_density, and nozzle_temperature. Random Forest and XGBoost achieved R² values of 0.949 and 0.941 respectively after tuning. SVR (C=100, epsilon=0.01, RBF kernel) achieved near-perfect prediction (R²=0.999), suggesting that tensile strength follows a smooth, learnable pattern in the feature space once properly scaled.
+
+### Elongation
+Similar to tensile strength, Linear Regression underperformed (R²=0.731), confirming non-linear dependencies. Random Forest (R²=0.959) and XGBoost (R²=0.928) both performed well after tuning. SVR again achieved the best result (R²=0.997), with optimal parameters C=10 and epsilon=0.01. The learning curves show that SVR generalizes well without overfitting, as training and validation scores converge at larger sample sizes.
