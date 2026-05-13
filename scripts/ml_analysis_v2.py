@@ -16,7 +16,7 @@ from xgboost import XGBRegressor
 import warnings
 warnings.filterwarnings('ignore')
 
-# ── 1. Load Data ──────────────────────────────────────────────────────────
+#  Load Data 
 df = pd.read_csv('enriched_data.csv')
 df = df.drop(columns=['infill_pattern', 'material'])
 
@@ -26,7 +26,7 @@ TARGETS   = ['roughness', 'tensile_strength', 'elongation']
 X = df[FEATURES]
 print(f"Dataset: {X.shape[0]} rows, {X.shape[1]} features")
 
-# ── 2. Hyperparameter Grids ───────────────────────────────────────────────
+# Hyperparameter Grids 
 param_grids = {
     'Linear Regression': {
         'model': LinearRegression(),
@@ -62,7 +62,7 @@ param_grids = {
     }
 }
 
-# ── 3. Train with GridSearchCV ────────────────────────────────────────────
+#  Train with GridSearchcv
 results = {}   # results[target][model] = {best_params, train_r2, val_r2, test_r2, ...}
 
 for target in TARGETS:
@@ -121,7 +121,7 @@ for target in TARGETS:
         print(f"    Val   R²    : {val_r2:.3f}")
         print(f"    Test  R²    : {test_r2:.3f}  |  RMSE: {test_rmse:.3f}  |  MAE: {test_mae:.3f}")
 
-# ── 4. Plot: Train / Val / Test R² Comparison ─────────────────────────────
+# Plot: Train / Val / Test R² Comparison 
 model_names = list(param_grids.keys())
 colors = {'train_r2': '#3498db', 'val_r2': '#2ecc71', 'test_r2': '#e74c3c'}
 x = np.arange(len(model_names))
@@ -158,7 +158,7 @@ plt.savefig('train_val_test_comparison.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("\n✅ Saved: train_val_test_comparison.png")
 
-# ── 5. Plot: Learning Curves ──────────────────────────────────────────────
+# Plot: Learning Curves 
 fig, axes = plt.subplots(3, 4, figsize=(20, 14))
 fig.suptitle('Learning Curves — Best Models After Tuning', fontsize=14, fontweight='bold')
 
@@ -202,7 +202,7 @@ plt.savefig('learning_curves.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("✅ Saved: learning_curves.png")
 
-# ── 6. Plot: Best Params Summary ─────────────────────────────────────────
+# Plot: Best Params Summary 
 fig, axes = plt.subplots(1, 3, figsize=(20, 5))
 fig.suptitle('Best Hyperparameters — GridSearchCV Results', fontsize=13, fontweight='bold')
 
@@ -230,7 +230,7 @@ plt.savefig('best_params_table.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("✅ Saved: best_params_table.png")
 
-# ── 7. Plot: Actual vs Predicted (all models, best target) ───────────────
+# Plot: Actual vs Predicted (all models, best target) 
 fig, axes = plt.subplots(3, 4, figsize=(20, 14))
 fig.suptitle('Actual vs Predicted — All Models, All Targets', fontsize=14, fontweight='bold')
 
