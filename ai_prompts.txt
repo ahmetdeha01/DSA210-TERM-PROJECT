@@ -1,20 +1,50 @@
-AI tools (chatGpt and Claude) were used during the preparation of this project.
+AI tools (ChatGPT and Claude) were used during the preparation of this project.
 
 Main uses:
 - organizing the GitHub repository structure
 - drafting and revising the README.md content
-- Refining initial Python code for data cleaning, EDA, and hypothesis testing
+- generating and refining Python code for data cleaning, EDA, and hypothesis testing
+- generating and refining Python code for feature engineering, data augmentation, and ML analysis
 - helping with documentation and milestone planning
+- preparing the final report
 
-Example prompts used:
-- "create a repository structure for my DSA210 project."
+Example prompts and outputs:
+
+- "Create a repository structure for my DSA210 project."
+  Output: Folder structure (data/, notebooks/, scripts/, visuals/) with file organization guidelines
+
 - "Generate/revise my Python code for data cleaning, EDA, and hypothesis testing for this dataset."
-- "Explain how to organize raw and processed data for GitHub submission."
-- "What ML methods should I apply to predict roughness, tensile strength and elongation?"
-- "Generate feature engineering and Gaussian noise augmentation code for my 3D printing dataset."
-- "What data augmentation techniques can I use to expand a small 3D printing dataset for ML?"
-- "Explain Gaussian noise augmentation and implement it for my dataset."
-- "Help me with ML analysis code using Linear Regression, Random Forest, XGBoost and SVR for my dataset."
-- "Help me formulate and test hypotheses based on my data."
+  Output: 01_data_cleaning_eda.ipynb notebook with data cleaning, EDA visualizations, and hypothesis tests
 
-All generated outputs were reviewed, edited, and applied by me.
+- "Explain how to organize raw and processed data for GitHub submission."
+  Output: data/raw/ and data/processed/ folder structure and naming conventions
+
+- "What ML methods should I apply to predict roughness, tensile strength and elongation?"
+  Output: Model selection guidance — Linear Regression, Random Forest, XGBoost, SVR with GridSearchCV tuning strategy
+
+- "What data augmentation techniques can I use to expand a small 3D printing dataset for ML?"
+  Output: Gaussian noise augmentation approach with 3% noise ratio and clipping strategy
+  Note: Gaussian noise augmentation was suggested by AI as a technique to expand the original 50-sample dataset. The approach was reviewed, validated against the original data distribution, and applied with physical constraints (clipping to original feature ranges).
+
+- "Generate feature engineering and Gaussian noise augmentation code for my 3D printing dataset."
+  Output: enrich_data.py script with 6 derived features (heat_ratio, thermal_delta, volumetric_flow, infill_wall_ratio, material_pla, pattern_honeycomb) and augmentation pipeline (50 → 250 samples)
+
+- "Explain Gaussian noise augmentation and implement it for my dataset."
+  Output: Implementation in enrich_data.py with validation checks and distribution comparison
+
+- "Write ML analysis code using Linear Regression, Random Forest, XGBoost and SVR for my dataset."
+  Output: ml_analysis.py (initial version) and ml_analysis_v2.py (updated with GridSearchCV, learning curves, train/val/test comparison)
+
+- "Add GridSearchCV hyperparameter tuning to my ML analysis with visualizations."
+  Output: ml_analysis_v2.py with GridSearchCV, 4 visualization files (train_val_test_comparison.png, learning_curves.png, best_params_table.png, actual_vs_predicted_all.png)
+
+- "Help me formulate and test hypotheses based on my data."
+  Output: 5 hypotheses with Pearson correlation and t-test results (H1-H5)
+
+- "Write model performance interpretation for roughness, tensile strength and elongation."
+  Output: Model performance interpretation section added to README.md and final report
+
+- "Update README with how to reproduce section and model interpretation."
+  Output: Updated README.md with How to Reproduce section and Model Performance Interpretation section
+
+All generated outputs were reviewed, tested in Google Colab, and committed to GitHub by me.
