@@ -55,11 +55,11 @@ Since the original dataset contains only 50 samples, two enrichment steps were a
 
 | # | Hypothesis | Result |
 |---|-----------|--------|
-| H1 | Layer height has a significant effect on surface roughness | ✅ Supported — r = 0.802, p < 0.001 |
-| H2 | Nozzle temperature has a significant effect on elongation and tensile strength | ✅ Supported — elongation r = -0.526, tensile strength r = -0.402, p < 0.001 |
-| H3 | Material type (PLA vs ABS) has a significant effect on all output variables | ✅ Supported — p < 0.05 for all three outputs |
-| H4 | Infill pattern (honeycomb vs grid) has a significant effect on mechanical properties | ❌ Rejected — p > 0.05, no significant difference found |
-| H5 | Volumetric flow (layer height × print speed) has a significant effect on surface roughness | ✅ Supported — r = 0.641, p < 0.001 |
+| H1 | Layer height has a significant effect on surface roughness |  Supported — r = 0.802, p < 0.001 |
+| H2 | Nozzle temperature has a significant effect on elongation and tensile strength |  Supported — elongation r = -0.526, tensile strength r = -0.402, p < 0.001 |
+| H3 | Material type (PLA vs ABS) has a significant effect on all output variables |  Supported — p < 0.05 for all three outputs |
+| H4 | Infill pattern (honeycomb vs grid) has a significant effect on mechanical properties |  Rejected — p > 0.05, no significant difference found |
+| H5 | Volumetric flow (layer height × print speed) has a significant effect on surface roughness |  Supported — r = 0.641, p < 0.001 |
 
 ---
 
