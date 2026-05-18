@@ -12,6 +12,8 @@ Example prompts used:
 - "Explain how to organize raw and processed data for GitHub submission."
 - "What ML methods should I apply to predict roughness, tensile strength and elongation?"
 - "Generate feature engineering and Gaussian noise augmentation code for my 3D printing dataset."
+- "What data augmentation techniques can I use to expand a small 3D printing dataset for ML?"
+- "Explain Gaussian noise augmentation and implement it for my dataset."
 - "Help me with ML analysis code using Linear Regression, Random Forest, XGBoost and SVR for my dataset."
 - "Help me formulate and test hypotheses based on my data."
 
