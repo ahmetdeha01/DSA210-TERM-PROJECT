@@ -6,11 +6,11 @@ Feature Engineering + Gaussian Noise Augmentation
 import pandas as pd
 import numpy as np
 
-# ── 1. Load original data ──────────────────────────────────────────────────
+#  1. Load original data 
 df = pd.read_csv('cleaned_data.csv')
 print(f"Original data shape: {df.shape}")
 
-# ── 2. Feature Engineering ────────────────────────────────────────────────
+#  2. Feature Engineering 
 def add_features(data):
     """Derive physically meaningful features from raw print parameters."""
     d = data.copy()
@@ -32,7 +32,7 @@ def add_features(data):
 df = add_features(df)
 print(f"After feature engineering: {df.shape}")
 
-# ── 3. Gaussian Noise Augmentation ───────────────────────────────────────
+#  3. Gaussian Noise Augmentation 
 np.random.seed(42)
 
 # Sütunlar
@@ -76,7 +76,7 @@ df_final = df_final.reset_index(drop=True)
 
 print(f"After augmentation:     {df_final.shape}")
 
-# ── 4. Validate ──────────────────────────────────────────────────────────
+#  4. Validate 
 print("\n── Distribution check (mean should be similar) ──")
 for col in output_cols:
     orig_mean = df[col].mean()
@@ -86,6 +86,6 @@ for col in output_cols:
 print(f"\nNew features added: heat_ratio, thermal_delta, volumetric_flow, infill_wall_ratio, material_pla, pattern_honeycomb")
 print(f"Total columns: {df_final.shape[1]}")
 
-# ── 5. Save ───────────────────────────────────────────────────────────────
+#  5. Save 
 df_final.to_csv('enriched_data.csv', index=False)
 print(f"\n✅ Saved: enriched_data.csv  ({df_final.shape[0]} rows × {df_final.shape[1]} cols)")
