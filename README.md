@@ -87,3 +87,19 @@ Linear Regression performed poorly (R²=0.683), indicating that tensile strength
 
 ### Elongation
 Similar to tensile strength, Linear Regression underperformed (R²=0.731), confirming non-linear dependencies. Random Forest (R²=0.959) and XGBoost (R²=0.928) both performed well after tuning. SVR again achieved the best result (R²=0.997), with optimal parameters C=10 and epsilon=0.01. The learning curves show that SVR generalizes well without overfitting, as training and validation scores converge at larger sample sizes.
+
+## How to Reproduce
+
+1. Clone the repository
+   git clone https://github.com/ahmetdeha01/DSA210-TERM-PROJECT
+
+2. Install dependencies
+   pip install -r requirements.txt
+
+3. Run data enrichment
+   python scripts/enrich_data.py
+
+4. Run ML analysis
+   python scripts/ml_analysis_v2.py
+
+   Or open notebooks/02_ml_analysis.ipynb in Google Colab.
